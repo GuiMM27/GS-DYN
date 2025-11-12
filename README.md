@@ -1,6 +1,6 @@
 # 🚀 Global Solution: Engenharia de Software - Motor de Orientação de Habilidades (MOH)
 
-Este projeto foi desenvolvido para a Global Solution (Prof. André Marques) com o tema "Propor soluções que usem inovação e tecnologia para melhorar a vida das pessoas no trabalho...".
+Este projeto foi desenvolvido para a Global Solution com o tema "Propor soluções que usem inovação e tecnologia para melhorar a vida das pessoas no trabalho...".
 
 Nossa solução é o **Motor de Orientação de Habilidades (MOH)**, um sistema em Python que usa Programação Dinâmica e análise de algoritmos para encontrar as melhores trilhas de aprendizado para profissionais.
 
