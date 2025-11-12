@@ -9,7 +9,7 @@ Nossa solução é o **Motor de Orientação de Habilidades (MOH)**, um sistema 
 ### 📦 Componentes do Projeto
 
 1.  **`GS_DYNP.ipynb`**: O código-fonte completo do projeto. Este é o notebook do Google Colab que contém a implementação de todos os 5 desafios.
-2.  **`RelatórioTécnico_GS-DYN.pdf`**: O relatório técnico que documenta as justificativas, análises de complexidade (Big-O), evidências experimentais (outputs e gráficos) e as conclusões de cada desafio, conforme solicitado na Seção VII do edital.
+2.  **`RelatórioTécnico_GS-DYN.pdf`**: O relatório técnico que documenta as justificativas, análises de complexidade (Big-O), evidências experimentais (outputs e gráficos) e as conclusões de cada desafio.
 
 ---
 
