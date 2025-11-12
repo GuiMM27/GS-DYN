@@ -1,0 +1,129 @@
+===============================================
+=== INICIANDO EXECUÇÃO COMPLETA DO MOH (COM GRÁFICOS) ===
+===============================================
+Carregando dataset...
+Dataset carregado com 12 habilidades.
+
+--- INICIANDO VALIDAÇÃO DO GRAFO ---
+[VALIDAÇÃO OK] Nenhum nó órfão detectado.
+[VALIDAÇÃO OK] Nenhum ciclo detectado (Grafo Acíclico Direcionado - DAG).
+--- VALIDAÇÃO DO GRAFO CONCLUÍDA: SUCESSO ---
+
+
+-----------------------------------------------
+---------------- DESAFIO 1 ------------------
+
+--- DESAFIO 1 (Determinístico) ---
+Buscando caminho para 'S6' com T<=350, C<=30
+Habilidades a considerar para o Knapsack: ['S4', 'S1', 'S3', 'S6']
+[Resultado Determinístico] Valor Máximo: 21
+[Caminho Selecionado] ['S6', 'S1', 'S4']
+
+--- DESAFIO 1 (Simulação Monte Carlo) ---
+Executando 1000 cenários para 4 habilidades...
+[Resultado Monte Carlo] Valor Esperado E[V]: 21.03
+[Resultado Monte Carlo] Desvio Padrão (stdev): 0.74
+
+
+-----------------------------------------------
+---------------- DESAFIO 2 ------------------
+
+--- DESAFIO 2 (Verificação Crítica) ---
+
+--- INICIANDO VALIDAÇÃO DO GRAFO ---
+[VALIDAÇÃO OK] Nenhum nó órfão detectado.
+[VALIDAÇÃO OK] Nenhum ciclo detectado (Grafo Acíclico Direcionado - DAG).
+--- VALIDAÇÃO DO GRAFO CONCLUÍDA: SUCESSO ---
+Total de permutações calculadas: 120
+
+--- 3 Melhores Ordens (Menor Custo de Tempo) ---
+1. Ordem: ('S3', 'S5', 'S7', 'S8', 'S9') -> Custo Total (Tempo): 550h
+2. Ordem: ('S3', 'S5', 'S7', 'S9', 'S8') -> Custo Total (Tempo): 550h
+3. Ordem: ('S3', 'S5', 'S8', 'S7', 'S9') -> Custo Total (Tempo): 550h
+
+--- 3 Piores Ordens (Maior Custo de Tempo) ---
+120. Ordem: ('S9', 'S8', 'S7', 'S5', 'S3') -> Custo Total (Tempo): 550h
+119. Ordem: ('S9', 'S8', 'S7', 'S3', 'S5') -> Custo Total (Tempo): 550h
+118. Ordem: ('S9', 'S8', 'S5', 'S7', 'S3') -> Custo Total (Tempo): 550h
+
+Justificativa da Heurística:
+A análise das 120 permutações mostra um resultado contra-intuitivo: todas as ordens têm o custo total de 550h.
+Isso ocorre porque nossa lógica de custo soma o 'Tempo de Aquisição' de cada habilidade e seus pré-requisitos únicos *exatamente uma vez*.
+Como todas as 5 HCs (e seus pré-reqs S1 e S2) devem ser adquiridas, o custo total é sempre a soma de S1+S2+S3+S5+S7+S8+S9, que é 550h, independentemente da ordem.
+
+
+-----------------------------------------------
+---------------- DESAFIO 3 ------------------
+
+--- DESAFIO 3 (Pivô Mais Rápido) ---
+Objetivo: Atingir Valor (S) >= 15 com habilidades 'Base'.
+Habilidades Base encontradas: ['S7', 'S1', 'H10', 'H12', 'S2']
+
+[Resultado (Guloso V/T)]
+  Caminho: ['H12', 'H10', 'S7', 'S2']
+  Valor: 17 | Tempo: 220h
+
+[Resultado (Busca Exaustiva - Ótima)]
+  Caminho: ['S7', 'H10', 'H12', 'S2']
+  Valor: 17 | Tempo: 220h
+
+[Análise] O algoritmo Guloso ENCONTROU a solução ótima para este dataset.
+
+--- DESAFIO 3 (Demonstração do Contraexemplo) ---
+[Contraexemplo (Guloso V/T)]
+  Caminho: ['A', 'B'] | Valor: 28 | Tempo: 16h
+[Contraexemplo (Busca Exaustiva - Ótima)]
+  Caminho: ['B', 'C'] | Valor: 20 | Tempo: 12h
+
+[Análise] O Guloso (T=16h) falhou, pois a solução ótima era T=12h.
+Isto ocorre porque a heurística V/T não garante a otimalidade global.
+
+
+-----------------------------------------------
+---------------- DESAFIO 4 ------------------
+
+--- DESAFIO 4 (Trilhas Paralelas - Sorting) ---
+Justificativa: Merge Sort. Complexidade garantida O(n log n).
+[Merge Sort Próprio] Tempo: 0.033601 ms
+[Sort Nativo (Timsort)] Tempo: 0.008646 ms
+
+Sprint A (1-6): ['H12', 'S2', 'S1', 'S5', 'S8', 'H10']
+Sprint B (7-12): ['S7', 'S9', 'H11', 'S3', 'S4', 'S6']
+
+Lista Ordenada por Complexidade (C):
+  H12 (Introdução a IoT): C=3
+  S2 (Modelagem de Dados (SQL)): C=3
+  S1 (Programação Básica (Python)): C=4
+  S5 (Visualização de Dados (BI)): C=5
+  S8 (APIs e Microsserviços): C=6
+  H10 (Segurança de Dados): C=6
+  S7 (Estruturas em Nuvem (AWS/Azure)): C=7
+  S9 (DevOps & CI/CD): C=8
+  H11 (Análise de Big Data): C=8
+  S3 (Algoritmos Avançados): C=8
+  S4 (Fundamentos de ML): C=9
+  S6 (IA Generativa Ética): C=10
+
+
+-----------------------------------------------
+---------------- DESAFIO 5 ------------------
+
+--- DESAFIO 5 (Recomendação) ---
+Buscando recomendações para o perfil: {'S2', 'S1'}
+
+--- Top 3 Recomendações ---
+  1. S3 (Algoritmos Avançados) - Valor: 7
+  2. S8 (APIs e Microsserviços) - Valor: 6
+  3. S5 (Visualização de Dados (BI)) - Valor: 6
+
+--- DESAFIO 5 (Recomendação) ---
+Buscando recomendações para o perfil: {'S7', 'S2', 'S1', 'S3', 'S5'}
+
+--- Top 3 Recomendações ---
+  1. S4 (Fundamentos de ML) - Valor: 8
+  2. S8 (APIs e Microsserviços) - Valor: 6
+  3. H10 (Segurança de Dados) - Valor: 5
+
+===============================================
+=== EXECUÇÃO COMPLETA DO MOH CONCLUÍDA ===
+===============================================
